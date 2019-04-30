@@ -1,11 +1,15 @@
-import _ from 'lodash'
-function component() {
-  var element = document.createElement('div');
+import './style.css'
+import { cube } from './math'
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+function component() {
+  var element = document.createElement('pre');
+
+  element.innerHTML = [
+    'Hello Webpack',
+    '5 cube is equal to' + cube(5)
+  ].join('\n\n');
 
   return element;
 }
-
-document.body.appendChild(component());
+let ele = component()
+document.body.appendChild(ele);
